@@ -4,7 +4,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/rehype-imgload)
 ![Codecov](https://img.shields.io/codecov/c/github/plastic041/rehype-imgload)
 
-Rehype plugin for adding `loading` property of `<img>` tags.
+Rehype plugin to add `loading` property into `<img>` tags.
 
 ## Installation
 
