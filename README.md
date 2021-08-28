@@ -27,7 +27,7 @@ const processor = unified()
   .use(rehypeImgLoad)
   .use(rehypeStringify);
 
-const output = processor.processSync('<h1>test</h1>\n<img src="/example.jpg">');
+const output = processor.processSync('<img src="/example.jpg">');
 console.log(output.toString());
 // '<img src="/example.jpg" loading="lazy">'
 ```
