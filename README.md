@@ -40,7 +40,7 @@ Default export is `rehypeImgLoad`.
 
 ###### `options.overwrite`
 
-`boolean`, `true` or `false`, default: `false`
+`boolean`. default: `false`
 
 if `true`, `loading="eager"` will be overwritten to `loading="lazy"`.
 
