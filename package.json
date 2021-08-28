@@ -20,6 +20,11 @@
     "image",
     "loading"
   ],
+  "homepage": "https://github.com/plastic041/rehype-imgload",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plastic041/rehype-imgload"
+  },
   "author": "plastic041 <plastic041@gmail.com>",
   "license": "MIT",
   "dependencies": {
