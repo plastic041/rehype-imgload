@@ -28,25 +28,36 @@ import { unified } from "unified";
 
 const processor = unified()
   .use(rehypeParse)
-  .use(rehypeImgLoad)
+  .use(rehypeImgLoad, { overwrite: false, mode: "lazy" })
   .use(rehypeStringify);
 
-const output = processor.processSync('<img src="/example.jpg">');
+const output = processor.processSync(
+  '<img src="/example.jpg"><img src="/example.jpg" loading="eager">'
+);
 console.log(output.toString());
-// '<img src="/example.jpg" loading="lazy">'
+// '<img src="/example.jpg" loading="lazy"><img src="/example.jpg" loading="eager">'
+// second one is still "eager", because overwrite is false
 ```
 
 ## API
 
-Default export is `rehypeImgLoad`.
+This package exports no identifiers. Default export is `rehypeImgLoad`.
 
 ### `unified().use(rehypeImgLoad[, options])`
 
+All options are optional.
+
 ###### `options.overwrite`
 
-`boolean`. default: `false`
+`boolean`. default=`false`
 
-if `true`, `loading="eager"` will be overwritten to `loading="lazy"`.
+If `true`, `loading="eager"` will be overwritten to `loading="lazy"`.
+
+###### `options.mode`
+
+`"lazy" | "eager"`, default=`"lazy"`
+
+Indicates how the browser should load the image. [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-loading)
 
 ## LICENCE
 
