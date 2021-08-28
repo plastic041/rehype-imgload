@@ -2,6 +2,6 @@
 import type { Options } from "./lib/index.js";
 import type { Root } from "hast";
 import type { Plugin } from "unified";
-declare const rehypeImgLazy: Plugin<[Options] | [], Root, Root>;
-export default rehypeImgLazy;
+declare const rehypeImgLoad: Plugin<[Options] | [], Root, Root>;
+export default rehypeImgLoad;
 export type { Options };

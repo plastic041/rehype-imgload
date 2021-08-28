@@ -1,7 +1,7 @@
 {
-  "name": "rehype-imglazy",
+  "name": "rehype-imgload",
   "version": "1.0.0",
-  "description": "rehype plugin to add loading='lazy' in image tags",
+  "description": "rehype plugin to set loading property in image tags",
   "main": "index.js",
   "scripts": {
     "build": "rimraf \"lib/**/*.d.ts\" && tsc && type-coverage",
@@ -18,8 +18,7 @@
     "rehype-plugin",
     "img",
     "image",
-    "loading",
-    "lazy"
+    "loading"
   ],
   "author": "plastic041 <plastic041@gmail.com>",
   "license": "MIT",

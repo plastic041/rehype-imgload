@@ -1,3 +1,3 @@
-import rehypeImgLazy from "./lib/index.js";
+import rehypeImgLoad from "./lib/index.js";
 
-export default rehypeImgLazy;
+export default rehypeImgLoad;

@@ -1,4 +1,4 @@
-import rehypeImgLazy from "../index.js";
+import rehypeImgLoad from "../index.js";
 import rehypeParse from "rehype-parse";
 import rehypeStringify from "rehype-stringify";
 import test from "tape";
@@ -7,7 +7,7 @@ import { unified } from "unified";
 test("rehypeImgLazy", (t) => {
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy)
+    .use(rehypeImgLoad)
     .use(rehypeStringify)
     .process('<img src="cat.png">', (error, file) => {
       t.deepEqual(
@@ -19,7 +19,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy)
+    .use(rehypeImgLoad)
     .use(rehypeStringify)
     .process('<img src="cat.png" loading="eager">', (error, file) => {
       t.deepEqual(
@@ -31,7 +31,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: true })
+    .use(rehypeImgLoad, { overwrite: true })
     .use(rehypeStringify)
     .process('<img src="cat.png">', (error, file) => {
       t.deepEqual(
@@ -43,7 +43,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: true })
+    .use(rehypeImgLoad, { overwrite: true })
     .use(rehypeStringify)
     .process('<img src="cat.png" loading="eager">', (error, file) => {
       t.deepEqual(
@@ -55,7 +55,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: false })
+    .use(rehypeImgLoad, { overwrite: false })
     .use(rehypeStringify)
     .process('<img src="cat.png">', (error, file) => {
       t.deepEqual(
@@ -67,7 +67,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: false })
+    .use(rehypeImgLoad, { overwrite: false })
     .use(rehypeStringify)
     .process('<img src="cat.png" loading="eager">', (error, file) => {
       t.deepEqual(
@@ -79,7 +79,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: true })
+    .use(rehypeImgLoad, { overwrite: true })
     .use(rehypeStringify)
     .process(
       '<img src="cat.png"><img src="cat.png" loading="eager">',
@@ -97,7 +97,7 @@ test("rehypeImgLazy", (t) => {
 
   unified()
     .use(rehypeParse, { fragment: true })
-    .use(rehypeImgLazy, { overwrite: false })
+    .use(rehypeImgLoad, { overwrite: false })
     .use(rehypeStringify)
     .process(
       '<img src="cat.png"><img src="cat.png" loading="eager">',
