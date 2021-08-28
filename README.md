@@ -1,5 +1,8 @@
 # rehype-imgload
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/plastic041/rehype-imgload/Node.js%20Package)
+![npm bundle size](https://img.shields.io/bundlephobia/min/rehype-imgload)
+
 Rehype plugin for adding `loading` property of `<img>` tags.
 
 Currently supports setting `loading="lazy"` only.
