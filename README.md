@@ -6,8 +6,6 @@
 
 Rehype plugin for adding `loading` property of `<img>` tags.
 
-Currently supports setting `loading="lazy"` only.
-
 ## Installation
 
 ```bash
