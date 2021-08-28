@@ -59,6 +59,6 @@ If `true`, `loading="eager"` will be overwritten to `loading="lazy"`.
 
 Indicates how the browser should load the image. [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-loading)
 
-## LICENCE
+## LICENSE
 
 MIT
