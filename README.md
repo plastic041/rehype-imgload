@@ -28,7 +28,7 @@ import { unified } from "unified";
 
 const processor = unified()
   .use(rehypeParse)
-  .use(rehypeImgLoad, { overwrite: false, mode: "lazy" })
+  .use(rehypeImgLoad)
   .use(rehypeStringify);
 
 const output = processor.processSync(
@@ -36,7 +36,8 @@ const output = processor.processSync(
 );
 console.log(output.toString());
 // '<img src="/example.jpg" loading="lazy"><img src="/example.jpg" loading="eager">'
-// second one is still "eager", because overwrite is false
+// loading="eager" is not changed because default overwrite option is false.
+// pass { overwrite: true } option to overwrite existing loading property.
 ```
 
 ## API
@@ -51,7 +52,8 @@ All options are optional.
 
 `boolean`. default=`false`
 
-If `true`, `loading="eager"` will be overwritten to `loading="lazy"`.
+- If `false`, existing `loading` properties will remain unchanged.
+- If `true`, all `loading` properties will be overwritten to `loading=options.mode`(see below).
 
 ###### `options.mode`
 
