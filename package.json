@@ -1,6 +1,6 @@
 {
   "name": "rehype-imgload",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "rehype plugin to set loading property in image tags",
   "scripts": {
     "build": "rimraf \"lib/**/*.d.ts\" && tsc && type-coverage",
