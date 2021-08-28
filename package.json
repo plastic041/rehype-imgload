@@ -1,10 +1,11 @@
 {
   "name": "rehype-imgload",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "rehype plugin to set loading property in image tags",
   "scripts": {
     "build": "rimraf \"lib/**/*.d.ts\" && tsc && type-coverage",
-    "test": "node test/test.js"
+    "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov node --conditions development test/test.js",
+    "test": "npm run build && npm run test-coverage"
   },
   "main": "index.js",
   "types": "index.d.ts",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@types/tape": "^4.13.2",
+    "c8": "^7.8.0",
     "rehype-parse": "^8.0.2",
     "rehype-stringify": "^9.0.1",
     "rimraf": "^3.0.2",
