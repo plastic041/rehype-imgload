@@ -3,6 +3,7 @@ import rehypeParse from "rehype-parse";
 import rehypeStringify from "rehype-stringify";
 import test from "tape";
 import { unified } from "unified";
+import { visit } from "unist-util-visit";
 
 test("rehypeImgLazy", (t) => {
   unified()
@@ -76,6 +77,27 @@ test("rehypeImgLazy", (t) => {
         );
       }
     );
+
+  unified()
+    .use(rehypeParse, { fragment: true })
+    .use(() => {
+      return (tree) => {
+        visit(tree, "element", (node) => {
+          if (node.tagName === "img") {
+            node.properties = undefined;
+          }
+        });
+      };
+    })
+    .use(rehypeImgLoad)
+    .use(rehypeStringify)
+    .process("<img>", (error, file) => {
+      t.deepEqual(
+        [error, String(file)],
+        [null, '<img loading="lazy">'],
+        "Element.Properties === undefined"
+      );
+    });
 
   t.end();
 });
