@@ -9,14 +9,18 @@ Rehype plugin to add `loading` property into `<img>` tags.
 ## Installation
 
 ```bash
-$ yarn add rehype-imgload # or npm install
+# use yarn
+$ yarn add rehype-imgload
+
+# use npm
+$ npm install rehype-imgload
 ```
 
 ## Usage
 
 ### General Use
 
-1. Add `loading="lazy"` to your `<img>`s.
+Adds `loading` property to your `<img>`s.
 
 ```javascript
 import rehypeImgLoad from "rehype-imgload";
@@ -34,8 +38,8 @@ const output = processor.processSync(
 );
 console.log(output.toString());
 // '<img src="/example.jpg" loading="lazy"><img src="/example.jpg" loading="eager">'
-// loading="eager" is not changed because default overwrite option is false.
-// pass { overwrite: true } option to overwrite existing loading property.
+// Latter `img` is not changed because `overwrite` is `false` by default.
+// Pass { overwrite: true } option to overwrite existing loading property.
 ```
 
 ## API
