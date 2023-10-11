@@ -17,6 +17,7 @@ jobs:
           version: 1.0.4
 
       - run: bun i
+      - run: bun run build
       - run: bun test
 
   publish-npm:
@@ -31,7 +32,8 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           version: 1.0.4
-      - run: bun ci
+      - run: bun i
+      - run: bun run build
       - run: bun test
       - run: npm publish
         env:
