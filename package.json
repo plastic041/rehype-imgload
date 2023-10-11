@@ -1,16 +1,14 @@
 {
   "name": "rehype-imgload",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "rehype plugin to set loading property in image tags",
   "scripts": {
-    "build": "rimraf \"lib/**/*.d.ts\" && tsc && type-coverage",
-    "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov node --conditions development test/test.js",
-    "test": "npm run build && npm run test-coverage"
+    "build": "bunx rimraf ./dist && bun tsc --project tsconfig.json"
   },
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "lib/",
+    "lib/index.js",
     "index.js",
     "index.d.ts"
   ],
@@ -30,19 +28,15 @@
   "author": "plastic041 <plastic041@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/hast": "^2.0.0",
-    "unified": "^10.1.0",
-    "unist-util-visit": "^4.0.0"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/tape": "^4.13.2",
-    "c8": "^7.8.0",
-    "rehype-parse": "^8.0.2",
-    "rehype-stringify": "^9.0.1",
-    "rimraf": "^3.0.2",
-    "tape": "^5.3.1",
-    "type-coverage": "^2.18.0",
-    "typescript": "^4.4.2"
+    "@types/hast": "^3.0.1",
+    "bun-types": "1.0.4",
+    "rehype-parse": "^9.0.0",
+    "rehype-stringify": "^10.0.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
   },
   "type": "module"
 }

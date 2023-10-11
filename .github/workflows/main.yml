@@ -12,11 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
+          version: 1.0.4
+
+      - run: bun i
+      - run: bun test
 
   publish-npm:
     needs: build
@@ -27,8 +28,11 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm test
+      - uses: oven-sh/setup-bun@v1
+        with:
+          version: 1.0.4
+      - run: bun ci
+      - run: bun test
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

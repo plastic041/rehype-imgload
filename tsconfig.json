@@ -1,17 +1,22 @@
 {
-  "include": ["lib/**/*.js"],
-  "exclude": ["node_modules", "test.js"],
+  "include": ["lib/index.ts"],
+  "exclude": ["node_modules", "test/**.*"],
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["ES2020"],
-    "module": "ES2020",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "checkJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "types": ["bun-types"],
+
+    "lib": ["ESNext"],
+    "module": "esnext",
+    "target": "esnext",
+
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "strict": true
+    "composite": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true
   }
 }

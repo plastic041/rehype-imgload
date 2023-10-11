@@ -1,27 +1,21 @@
-/**
- * @typedef {import('hast').Root} Root
- * @typedef {import('hast').Element} Element
- * @typedef {import('hast').Properties} Properties
- *
- * @typedef Options
- * @property {boolean} [overwrite=false]
- * @property {"lazy" | "eager"} [mode="lazy"]
- **/
-
 import { visit } from "unist-util-visit";
 
-/**
- * @type {import('unified').Plugin<[Options] | void[], Root, Root>}
- */
-export default function rehypeImgLoad(option) {
+import type { Root } from "hast";
+
+type Options = {
+  overwrite?: boolean;
+  mode?: "lazy" | "eager";
+};
+
+export default function rehypeImgLoad(option: Options = {}) {
   const setting = {
     overwrite: false,
     mode: "lazy",
     ...option,
   };
 
-  return (tree) => {
-    visit(tree, "element", (node) => {
+  return (hast: Root) => {
+    visit(hast, "element", (node) => {
       if (node.tagName === "img") {
         const isLoadingExists =
           node.properties && node.properties.hasOwnProperty("loading") // check if "properties" is object, and has "loading" property

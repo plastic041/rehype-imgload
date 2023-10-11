@@ -2,7 +2,6 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/plastic041/rehype-imgload/node.js.yml?branch=main)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/rehype-imgload)
-![Codecov](https://img.shields.io/codecov/c/github/plastic041/rehype-imgload)
 
 Rehype plugin to add `loading` property into `<img>` tags.
 

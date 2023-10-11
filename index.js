@@ -1,3 +1,3 @@
-import rehypeImgLoad from "./lib/index.js";
+import rehypeImgLoad from "./dist/lib/index";
 
 export default rehypeImgLoad;
