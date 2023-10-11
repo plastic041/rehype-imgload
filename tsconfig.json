@@ -2,6 +2,7 @@
   "include": ["lib/index.ts"],
   "exclude": ["node_modules", "test/**.*"],
   "compilerOptions": {
+    "outDir": "dist",
     "types": ["bun-types"],
 
     "lib": ["ESNext"],
@@ -9,8 +10,6 @@
     "target": "esnext",
 
     "moduleResolution": "bundler",
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
     "moduleDetection": "force",
 
     "strict": true,
