@@ -1,4 +1,4 @@
-import rehypeImgLoad from "../index.js";
+import rehypeImgLoad from "../dist/lib/index.js";
 import rehypeParse from "rehype-parse";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
