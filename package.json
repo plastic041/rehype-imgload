@@ -1,6 +1,6 @@
 {
   "name": "rehype-imgload",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "rehype plugin to set loading property in image tags",
   "scripts": {
     "build": "bun tsc --project tsconfig.json"
