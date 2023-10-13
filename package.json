@@ -3,14 +3,12 @@
   "version": "2.0.0",
   "description": "rehype plugin to set loading property in image tags",
   "scripts": {
-    "build": "bunx rimraf ./dist && bun tsc --project tsconfig.json"
+    "build": "bun tsc --project tsconfig.json"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "files": [
-    "lib/index.js",
-    "index.js",
-    "index.d.ts"
+    "dist/lib"
   ],
   "keywords": [
     "unified",

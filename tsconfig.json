@@ -2,7 +2,7 @@
   "include": ["lib/index.ts"],
   "exclude": ["node_modules", "test/**.*"],
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
     "types": ["bun-types"],
 
     "lib": ["ESNext"],
