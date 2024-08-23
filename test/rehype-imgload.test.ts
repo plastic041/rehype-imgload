@@ -12,7 +12,7 @@ test("overwrite=true && mode='lazy'", () => {
     .process(
       '<img src="cat.png"><img src="cat.png" loading="eager">',
       (error, file) => {
-        expect(error).toBe(undefined);
+        expect(error).toBeUndefined();
         expect(String(file)).toBe(
           '<img src="cat.png" loading="lazy"><img src="cat.png" loading="lazy">'
         );
@@ -28,7 +28,7 @@ test("overwrite=true && mode='eager'", () => {
     .process(
       '<img src="cat.png"><img src="cat.png" loading="lazy">',
       (error, file) => {
-        expect(error).toBe(undefined);
+        expect(error).toBeUndefined();
         expect(String(file)).toBe(
           '<img src="cat.png" loading="eager"><img src="cat.png" loading="eager">'
         );
@@ -44,7 +44,7 @@ test("overwrite=false && mode='lazy'", () => {
     .process(
       '<img src="cat.png"><img src="cat.png" loading="eager">',
       (error, file) => {
-        expect(error).toBe(undefined);
+        expect(error).toBeUndefined();
         expect(String(file)).toBe(
           '<img src="cat.png" loading="lazy"><img src="cat.png" loading="eager">'
         );
@@ -60,7 +60,7 @@ test("overwrite=false && mode='eager'", () => {
     .process(
       '<img src="cat.png"><img src="cat.png" loading="lazy">',
       (error, file) => {
-        expect(error).toBe(undefined);
+        expect(error).toBeUndefined();
         expect(String(file)).toBe(
           '<img src="cat.png" loading="eager"><img src="cat.png" loading="lazy">'
         );
